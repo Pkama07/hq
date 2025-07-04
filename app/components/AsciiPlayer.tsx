@@ -60,7 +60,7 @@ export default function AsciiPlayer() {
 	useEffect(() => {
 		if (!atlasMeta) return; // worker has not passed us the atlas yet
 
-		let start = performance.now();
+		const start = performance.now();
 		const { luma, W, H, N } = atlasMeta;
 
 		const ascii = sliceToAscii(luma, W, H, 0);
