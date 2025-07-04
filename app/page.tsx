@@ -1,9 +1,10 @@
 import Image from "next/image";
-import ProjectLink from "./components/ProjectLink";
+import ProjectLink from "@/app/components/ProjectLink";
+import AsciiPlayer from "@/app/components/AsciiPlayer";
 
 export default function Home() {
 	return (
-		<div className="h-screen w-screen bg-white text-black p-5">
+		<div className="h-fit min-h-screen w-screen bg-white text-black p-5">
 			<p>
 				Hi, I&apos;m Pradyun. I study computer science and math at Purdue. I
 				currently work at Palantir in NYC and I&apos;m planning on working at a
@@ -22,12 +23,13 @@ export default function Home() {
 				</ul>
 			</div>
 			<Image
-				src="https://gifdb.com/images/high/dance-walk-jimbo-boss-baby-i90nn238y9ezarqv.webp"
+				src="/jimbo.gif"
 				alt="dancing jimbo"
-				width={300}
-				height={300}
-				className="mt-5"
+				width={220}
+				height={164}
+				className="my-5"
 			/>
+			<AsciiPlayer />
 		</div>
 	);
 }
