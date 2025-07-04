@@ -20,6 +20,12 @@ export default function Home() {
 							githubUrl="https://github.com/Pkama07/hq"
 						/>
 					</li>
+					{/* <li>
+						<ProjectLink
+							title="the ascii animation below"
+							projectUrl="https://pradyun.dev/jimbo-gif"
+						/>
+					</li> */}
 				</ul>
 			</div>
 			<Image

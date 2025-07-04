@@ -2,7 +2,7 @@ import { FaGithub } from "react-icons/fa";
 
 interface ProjectLinkProps {
 	projectUrl: string;
-	githubUrl: string;
+	githubUrl?: string;
 	title: string;
 }
 
@@ -21,15 +21,17 @@ export default function ProjectLink({
 			>
 				{title}
 			</a>
-			<a
-				href={githubUrl}
-				target="_blank"
-				rel="noopener noreferrer"
-				className="text-gray-600 hover:text-gray-800"
-				title="View on GitHub"
-			>
-				<FaGithub />
-			</a>
+			{githubUrl && (
+				<a
+					href={githubUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="text-gray-600 hover:text-gray-800"
+					title="View on GitHub"
+				>
+					<FaGithub />
+				</a>
+			)}
 		</div>
 	);
 }
