@@ -9,6 +9,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 				className={`list-disc pl-8 mb-2 ${props.className || ""}`}
 			/>
 		),
+		p: (props) => <p {...props} className={`mb-2 ${props.className || ""}`} />,
 		ol: (props) => (
 			<ol
 				{...props}

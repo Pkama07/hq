@@ -4,12 +4,20 @@ import { POSTS_DIR } from "@/lib/common";
 import fs from "node:fs/promises";
 import ProjectLink from "./components/ProjectLink";
 
+async function getGithubUrl(filename: string): Promise<string | undefined> {
+	const content = await fs.readFile(`${POSTS_DIR}/${filename}`, "utf-8");
+	const match = content.match(/\[github_url\]:\s*<>\s*\((.*?)\)/);
+	return match?.[1];
+}
+
 export default async function Home() {
-	// go through all of the files in POSTS_DIR and, for each file in there, give it an entry in the list of projects as a link to /projects/[slug]
 	const files = await fs.readdir(POSTS_DIR);
-	const projects = files.map((f) => ({
-		slug: f.replace(/\.md$/, "").replace(/\.mdx$/, ""),
-	}));
+	const projects = await Promise.all(
+		files.map(async (f) => ({
+			slug: f.replace(/\.md$/, "").replace(/\.mdx$/, ""),
+			githubUrl: await getGithubUrl(f),
+		}))
+	);
 
 	return (
 		<div className="h-fit min-h-screen min-w-fit w-screen bg-white text-black p-5">
@@ -25,7 +33,11 @@ export default async function Home() {
 			<ul className="list-disc pl-8">
 				{projects.map((p) => (
 					<li key={p.slug}>
-						<ProjectLink title={p.slug} projectUrl={`/projects/${p.slug}`} />
+						<ProjectLink
+							title={p.slug}
+							projectUrl={`/projects/${p.slug}`}
+							githubUrl={p.githubUrl}
+						/>
 					</li>
 				))}
 			</ul>

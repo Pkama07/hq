@@ -1,6 +1,6 @@
 # Ascii Animations of GIFs
 
-[github_url]: <> ()
+[github_url]: <> (https://github.com/Pkama07/hq)
 
 ### Motivation
 
