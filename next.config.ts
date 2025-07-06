@@ -1,13 +1,12 @@
-import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
-const nextConfig: NextConfig = {
-	images: {
-		remotePatterns: [
-			new URL(
-				"https://gifdb.com/images/high/dance-walk-jimbo-boss-baby-i90nn238y9ezarqv.webp"
-			),
-		],
-	},
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+	pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+	extension: /\.(md|mdx)$/,
+});
+
+export default withMDX(nextConfig);
