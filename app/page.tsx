@@ -4,13 +4,18 @@ import AsciiPlayer from "@/app/components/AsciiPlayer";
 export default async function Home() {
 	return (
 		<div className="h-fit min-h-screen min-w-fit w-screen bg-white text-black p-5">
-			<p>Member of Technical Staff at SafetyKit in San Francisco</p>
-			<p>Previous experience:</p>
-			<ul className="list-disc pl-8">
-				<li>Summer 2025: SWE Intern at Palantir in NYC</li>
-				<li>Summer 2024: SWE Intern at Molex in Bridgewater, NJ</li>
-				<li>Summer 2023: SWE Intern at Zurich Insurance in Barcelona, Spain</li>
-			</ul>
+			<div className="mb-5">
+				<p className="text-2xl font-bold">Pradyun Kamaraju</p>
+				<p>pradyunkamaraju [at] gmail.com</p>
+			</div>
+			<p>
+				I'm a Member of Technical Staff at SafetyKit in San Francisco. Prior to
+				this, I was a SWE intern at Palantir in NYC on the Data Connection team.
+			</p>
+			<p>
+				I graduated from Purdue University with degrees in Computer Science and
+				Math in May 2026.
+			</p>
 			<Image
 				src="/jimbo.gif"
 				alt="dancing jimbo"
